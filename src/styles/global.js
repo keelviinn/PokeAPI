@@ -9,6 +9,9 @@ export default createGlobalStyle`
    }
    html, body, #root {
       min-height: 100%;
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
    }
    body {
       background: #f4dc26;
