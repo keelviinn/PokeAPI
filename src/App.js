@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+import Routes from './routes';
+import GlobalStyles from './styles/global';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  // Similar a componentDidMount e componentDidUpdate:
-  useEffect(() => {
-    // Atualiza o título do documento utilizando a API do navegador
-    document.title = `You clicked ${count} times`;
-  });
-
   return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-    </div>
+    <>
+      <Routes />
+      <GlobalStyles />
+    </>
   );
 }
 
