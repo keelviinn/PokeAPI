@@ -11,7 +11,7 @@ export default createGlobalStyle`
       min-height: 100%;
       max-width: 1020px;
       margin: 0 auto;
-      padding: 0 20px 50px;
+      padding: 0;
    }
    body {
       background: #f4dc26;
@@ -19,7 +19,7 @@ export default createGlobalStyle`
    }
    body, input, button {
       color: #222;
-      font-size: 14px;
+      font-size: 16px;
       font-family: 'Poppins', Arial, Helvetica, sans-serif;
    }
    button {

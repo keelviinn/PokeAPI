@@ -43,5 +43,7 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'react/prop-types': 'off',
+    'no-use-before-define': 'off',
   },
 };
