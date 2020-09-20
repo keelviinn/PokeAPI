@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { shade } from 'polished';
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +13,14 @@ export const CardWrapper = styled.div`
   margin: 20px 0px;
   background-color: #f5e878;
   border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  transition: transform 0.2s;
+
+  &:hover {
+    background-color: ${shade(0.2, '#f5e878')};
+    transform: translateX(2px);
+  }
 `;
 
 export const PokeImg = styled.img`

@@ -21,7 +21,7 @@ function Poke() {
 
   return (
     <>
-      <div className="poke-header">
+      <div className="poke">
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
           alt=""

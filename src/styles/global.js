@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import Pokeball from '../assets/svg/Pokeball.svg';
+
 export default createGlobalStyle`
    * {
       margin: 0;
@@ -9,12 +11,11 @@ export default createGlobalStyle`
    }
    html, body, #root {
       min-height: 100%;
-      max-width: 1020px;
       margin: 0 auto;
       padding: 0;
    }
    body {
-      background: #f4dc26;
+      background: #f4dc26 url(${Pokeball}) no-repeat 99%;
       -webkit-font-smoothing: antialiased !important;
    }
    body, input, button {
