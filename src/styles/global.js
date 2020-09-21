@@ -18,6 +18,7 @@ export default createGlobalStyle`
 
    body {
       background: #f4dc26 url(${Pokeball}) no-repeat 120%;
+      opacity: 90%;
       -webkit-font-smoothing: antialiased !important;
    } 
 

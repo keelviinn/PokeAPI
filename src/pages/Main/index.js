@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { getAllPokemon, getPokemon } from '../../services/service';
+
 import Card from '../../components/Cards';
 import {
   Loading,
