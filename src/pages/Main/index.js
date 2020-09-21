@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 import { getAllPokemon, getPokemon } from '../../services/service';
 import Card from '../../components/Cards';
-import { Layout, GridContainer, Btn, BtnButton } from './styles';
+import {
+  Loading,
+  Layout,
+  GridContainer,
+  Btn,
+  BtnButton,
+  LinkWrapper,
+} from './styles';
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -14,15 +21,27 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const response = await getAllPokemon(initialURL);
+
+      setLoading(false);
       setNextUrl(response.next);
       setPrevUrl(response.previous);
       await loadPokemon(response.results);
-      setLoading(false);
     }
     fetchData();
-  }, []);
+  }, [initialURL]);
+
+  const loadPokemon = async (data) => {
+    const _pokemonData = await Promise.all(
+      data.map(async (pokemon) => {
+        const pokemonRecord = await getPokemon(pokemon);
+        return pokemonRecord;
+      })
+    );
+    setPokemonData(_pokemonData);
+  };
 
   const next = async () => {
+    if (!nextUrl) return;
     setLoading(true);
     const data = await getAllPokemon(nextUrl);
     await loadPokemon(data.results);
@@ -41,21 +60,11 @@ function App() {
     setLoading(false);
   };
 
-  const loadPokemon = async (data) => {
-    const _pokemonData = await Promise.all(
-      data.map(async (pokemon) => {
-        const pokemonRecord = await getPokemon(pokemon);
-        return pokemonRecord;
-      })
-    );
-    setPokemonData(_pokemonData);
-  };
-
   return (
     <>
       <Layout>
         {loading ? (
-          <h1 style={{ textAlign: 'center' }}>Loading...</h1>
+          <Loading>Loading...</Loading>
         ) : (
           <>
             <Btn>
@@ -63,8 +72,12 @@ function App() {
               <BtnButton onClick={next}>Next</BtnButton>
             </Btn>
             <GridContainer>
-              {pokemonData.map((pokemon, i) => {
-                return <Card key={i} pokemon={pokemon} />;
+              {pokemonData.map((pokemon) => {
+                return (
+                  <LinkWrapper to={pokemon.name}>
+                    <Card key={pokemon.name} pokemon={pokemon} />
+                  </LinkWrapper>
+                );
               })}
             </GridContainer>
             <Btn>

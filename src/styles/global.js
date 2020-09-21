@@ -17,8 +17,7 @@ export default createGlobalStyle`
    body {
       background: #f4dc26 url(${Pokeball}) no-repeat 99%;
       -webkit-font-smoothing: antialiased !important;
-   }
-   body, input, button {
+   body, input, button, a {
       color: #222;
       font-size: 16px;
       font-family: 'Poppins', Arial, Helvetica, sans-serif;

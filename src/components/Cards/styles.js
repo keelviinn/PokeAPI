@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { shade } from 'polished';
 
-export const CardWrapper = styled(Link)`
+export const CardWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-width: 200px;
   height: 150px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   padding: 7px;
   margin: 20px 0px;
   background-color: #f5e878;
