@@ -23,8 +23,9 @@ export const CardWrapper = styled.div`
 `;
 
 export const PokeImg = styled.img`
-  background-color: #fff;
+  background-color: #f4dc26;
   margin: 0 20px;
+  border: 1px solid #fff;
   border-radius: 50%;
 `;
 

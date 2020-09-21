@@ -17,7 +17,7 @@ export default function Card({ pokemon }) {
         <Name>{pokemon.name}</Name>
         <CardTypesWrapper>
           {pokemon.types.map((type) => {
-            return <CartType>{type.type.name}</CartType>;
+            return <CartType>• {type.type.name}</CartType>;
           })}
         </CardTypesWrapper>
       </CardInfoWrapper>

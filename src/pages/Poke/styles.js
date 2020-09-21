@@ -25,8 +25,8 @@ export const GoToMain = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  margin-bottom: 5rem;
-  padding: 1.5rem 3.75rem;
+  margin-bottom: 2rem;
+  padding: 1rem 3.75rem;
   background: #30a7d7;
   border-radius: 6px;
   border: 0;
@@ -47,6 +47,18 @@ export const GoToMain = styled(Link)`
   }
 `;
 
+export const Title = styled.h1`
+  color: #686868;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 36px;
+
+  span {
+    font-weight: 700;
+  }
+`;
+
 export const PokeItensWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -64,13 +76,14 @@ export const PokeInfos = styled.ul`
 
 export const PokeInfoItem = styled.li`
   list-style: none;
+  /* border-bottom: 1px solid #d0d0d0; */
 
   p {
-    font-size: 16px;
+    font-size: 22px;
     color: #686868;
 
     span {
-      font-size: 20px;
+      font-size: 26px;
       font-weight: bold;
       color: #284de0;
     }

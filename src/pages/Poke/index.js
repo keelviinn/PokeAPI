@@ -7,6 +7,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import {
   Loading,
   GoToMain,
+  Title,
   PokeWrapper,
   PokeItensWrapper,
   PokeImg,
@@ -43,6 +44,9 @@ function Poke() {
             <FiArrowLeft />
             <strong>Volta para Home</strong>
           </GoToMain>
+          <Title>
+            Olá, eu sou <span>{pokemon.name}</span>
+          </Title>
           <PokeItensWrapper>
             <PokeImg>
               <img
